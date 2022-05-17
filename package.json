@@ -1,0 +1,24 @@
+{
+  "name": "mrmarble-dev",
+  "version": "1.0.0",
+  "description": "MrMarble web page",
+  "main": "index.js",
+  "scripts": {
+    "build:production": "rimraf ./static/dist && webpack --mode production",
+    "build": "webpack --progress --watch --mode development",
+    "start": "npm run build"
+  },
+  "keywords": [],
+  "author": "MrMarble",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.17.12",
+    "@babel/preset-env": "^7.17.12",
+    "assets-webpack-plugin": "^7.1.1",
+    "babel-loader": "^8.2.5",
+    "rimraf": "^3.0.2",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "zdog": "^1.1.3"
+  }
+}
