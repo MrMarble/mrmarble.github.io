@@ -1,4 +1,4 @@
-baseURL = "https://mrmarble.dev/"
+baseURL = "https://mrmarble.github.io/"
 # include content marked as draft
 buildDrafts = false
 # include content with publishdate in the future
@@ -13,21 +13,21 @@ editor = "vim"
 languageCode = "en"
 language = "en"
 theme = "vncnt-hugo"
-title = "Alvaro Tinoco · Landing Page"
+title = "Alvaro Tinoco"
 
 [permalinks]
-  fixed = ":title/"
-  posts = "posts/:slug/"
+fixed = ":title/"
+posts = "posts/:slug/"
 
 [params]
-  author = "Alvaro Tinoco"
-  email = "atinoco@protonmail.com"
-  description = "Landing Page"
-  bio = "Full Stack Web Developer.  \nPython Enthusiast."
-  avatar = "img/avatar.png"
-  favicon = "img/favicon.ico"
-  error404 = "There is no such page."
+author = "Alvaro Tinoco"
+email = "atinoco@protonmail.com"
+description = "Business card"
+bio = "Full Stack Developer.  \nGo Enthusiast."
+avatar = "img/avatar.png"
+favicon = "img/favicon.ico"
+error404 = "There is no such page."
 
-  [params.contact]
-    github = "https://github.com/MrMarble"
-    linkedin = "https://www.linkedin.com/in/alvaro-tinoco-marmol/"
+[params.contact]
+github = "https://github.com/MrMarble"
+linkedin = "https://www.linkedin.com/in/alvaro-tinoco-marmol/"
