@@ -22,6 +22,16 @@ jobs:
           hugo-version: 'latest'
           # extended: true
 
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - run: npm ci
+      
+      - name: Build Webpack
+        run : npm run build:production
+
       - name: Build
         run: hugo --minify
 
