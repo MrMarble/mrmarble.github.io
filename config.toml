@@ -1,4 +1,4 @@
-baseURL = "https://mrmarble.github.io/"
+zbaseURL = "https://mrmarble.github.io/"
 # include content marked as draft
 buildDrafts = false
 # include content with publishdate in the future
@@ -26,15 +26,10 @@ _merge = "none"
     avatar      = "img/avatar.png"
     bio         = "Full Stack Developer.  \nGo Enthusiast."
     description = "Business card"
+    email       = "atinoco@protonmail.com"
     error404    = "There is no such page."
     favicon     = "img/favicon.ico"
 
     [params.contact]
         github   = "https://github.com/MrMarble"
         linkedin = "https://www.linkedin.com/in/alvaro-tinoco-marmol/"
-
-        [params.contact.email]
-            icon  = "envelope"                      # may be omitted. defaults to key name
-            link  = "mailto:atinoco@protonmail.com"
-            name  = "email"                         # may be omitted. defaults to key name
-            style = "fas"                           # may be omitted. default = "fas"
