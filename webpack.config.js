@@ -1,9 +1,11 @@
 const path = require("path");
+
 const AssetsPlugin = require("assets-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: "./src/js/main.js",
+    app: { import: "./src/js/main.ts" },
   },
   module: {
     rules: [
@@ -17,17 +19,29 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.tsx?$/,
+        loader: "ts-loader",
+      },
     ],
   },
-
+  externals: {
+    fs: "fs",
+    crypto: "crypto",
+    path: "path",
+  },
   output: {
     path: path.join(__dirname, "static", "js"),
-    filename: "[name].[chunkhash].js",
+    filename: "[name].[contenthash].js",
     publicPath: "/js/",
   },
 
   resolve: {
+    alias: {
+      three: path.resolve("./node_modules/three"),
+    },
     modules: ["node_modules"],
+    extensions: [".ts", ".tsx", ".js"],
   },
 
   plugins: [
@@ -36,5 +50,27 @@ module.exports = {
       path: path.join(__dirname, "data"),
       prettyPrint: true,
     }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "node_modules/three/examples/js/libs/draco/gltf",
+          globOptions: { ignore: ["**/draco_encoder.js"] },
+          to: "gltf",
+        },
+      ],
+    }),
   ],
+  optimization: {
+    moduleIds: "deterministic",
+    runtimeChunk: "single",
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      },
+    },
+  },
 };
