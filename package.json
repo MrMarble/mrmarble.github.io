@@ -4,8 +4,9 @@
   "description": "MrMarble web page",
   "main": "index.js",
   "scripts": {
-    "build:production": "rimraf ./static/dist && webpack --mode production",
-    "build": "webpack --progress --watch --mode development",
+    "build:production": "rimraf ./static/js && webpack --progress --mode production",
+    "build": "webpack --progress --mode development",
+    "develop": "concurrently --kill-others --raw \"webpack --watch --mode development\" \"hugo server\"",
     "start": "npm run build"
   },
   "keywords": [],
@@ -14,11 +15,18 @@
   "devDependencies": {
     "@babel/core": "^7.17.12",
     "@babel/preset-env": "^7.17.12",
+    "@types/three": "^0.140.0",
     "assets-webpack-plugin": "^7.1.1",
     "babel-loader": "^8.2.5",
+    "concurrently": "^7.2.0",
+    "copy-webpack-plugin": "^11.0.0",
     "rimraf": "^3.0.2",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.6.4",
     "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2",
-    "zdog": "^1.1.3"
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "three": "^0.140.2"
   }
 }
