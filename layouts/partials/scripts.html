@@ -1,4 +1,7 @@
-{{ $script := .Site.Data.webpack_assets.app }}
-{{ with $script.js }}
-  <script src="{{ relURL . }}" defer></script>
-{{ end }}
+ {{ range $script := .Site.Data.webpack_assets -}}
+  {{- with $script.js -}}
+    {{if eq "string" (printf "%T" .)}}
+      <script src="{{ relURL . }}" defer async></script>
+    {{end}}
+  {{ end -}}
+{{- end -}}
