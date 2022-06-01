@@ -10,9 +10,8 @@ import {
   Vector3,
   WebGLRenderer,
 } from "three";
-
-import { GLTF, GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+import { GLTF, GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { SAOPass } from "three/examples/jsm/postprocessing/SAOPass.js";
@@ -73,7 +72,7 @@ export class App {
   }
 
   private addEvents() {
-    window.addEventListener("resize", () => {
+    const onResize = () => {
       const { width, height, left, top } = this.canvas.getBoundingClientRect();
       this.canvas.setAttribute("width", width + "");
       this.canvas.setAttribute("height", height + "");
@@ -86,9 +85,17 @@ export class App {
 
       this.renderer.setSize(width, height);
       this.composer.setSize(width, height);
-    });
+    };
+
+    window.addEventListener("resize", onResize);
+
+    let first = true;
 
     window.addEventListener("mousemove", (event) => {
+      if (first) {
+        first = false;
+        onResize();
+      }
       this.isSpinning = false;
 
       this.mouse.x = (event.clientX - this.canvasX) / 50;
