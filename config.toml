@@ -1,4 +1,4 @@
-zbaseURL = "https://mrmarble.github.io/"
+baseURL = "https://mrmarble.dev/"
 # include content marked as draft
 buildDrafts = false
 # include content with publishdate in the future
