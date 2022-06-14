@@ -28,7 +28,7 @@ jobs:
           node-version: 16
           cache: 'npm'
       - run: npm ci
-      
+
       - name: Build Webpack
         run : npm run build:production
 
@@ -41,3 +41,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          cname: mrmarble.dev
