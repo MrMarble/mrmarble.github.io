@@ -1,0 +1,42 @@
+# The URL the site will be built for
+base_url = "https://mrmarble.dev"
+
+
+# The site title and description; used in feeds by default.
+title = "MrMarble's Corner"
+description = "I write things sometimes."
+
+# The default language; used in feeds.
+default_language = "en"
+
+# The site theme to use.
+theme = "anemone"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# When set to "true", the generated HTML files are minified.
+minify_html = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+# When set to "true", a feed is automatically generated.
+generate_feed = true
+
+# The filename to use for the feed. Used as the template filename, too.
+feed_filename = "rss.xml"
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[extra]
+author = "MrMarble"
+favicon = "favicon.ico"
+display_author = false
+header_nav = [
+  { url = "/", name_en = "/home/"},
+  { url = "/blog", name_en = "/blog/"}
+]
