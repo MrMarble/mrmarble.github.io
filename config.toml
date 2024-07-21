@@ -1,7 +1,6 @@
 # The URL the site will be built for
 base_url = "https://mrmarble.dev"
 
-
 # The site title and description; used in feeds by default.
 title = "MrMarble's Corner"
 description = "I write things sometimes."
