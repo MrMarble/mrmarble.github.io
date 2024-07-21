@@ -21,7 +21,7 @@ minify_html = true
 build_search_index = false
 
 # When set to "true", a feed is automatically generated.
-generate_feed = true
+generate_feeds = true
 
 # The filename to use for the feed. Used as the template filename, too.
 feed_filename = "rss.xml"
