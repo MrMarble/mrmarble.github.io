@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>MrMarble&#x27;s Corner</title>
+      <link>https://mrmarble.dev</link>
+      <description>I write things sometimes.</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://mrmarble.dev/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sun, 21 Jul 2024 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Caching Github Pages</title>
+          <pubDate>Sun, 21 Jul 2024 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://mrmarble.dev/blog/caching-github-pages/</link>
+          <guid>https://mrmarble.dev/blog/caching-github-pages/</guid>
+          <description xml:base="https://mrmarble.dev/blog/caching-github-pages/">&lt;p&gt;When hosting static websites with GitHub Pages, you might encounter performance issues due to the default caching policy. GitHub Pages sets &lt;code&gt;Cache-Control: max-age=600&lt;&#x2F;code&gt;, which means browsers will cache the site for 10 minutes. This can be problematic if your site is heavy or doesn’t update often. Fortunately, you can use Cloudflare DNS to improve caching and enhance your site&#x27;s performance.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-cache-github-pages&quot;&gt;Why Cache GitHub Pages?&lt;&#x2F;h2&gt;
+&lt;p&gt;Caching is crucial for optimizing the performance of your website. By extending the cache duration, you reduce the number of requests to your server (Github in this case), speeding up load times for returning visitors. This is particularly beneficial for static sites that don’t change frequently, as it allows users to access the cached content quickly without unnecessary re-fetching.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;setting-up-cloudflare-with-github-pages&quot;&gt;Setting Up Cloudflare with GitHub Pages&lt;&#x2F;h2&gt;
+&lt;p&gt;I&#x27;ll assume that you already have a GitHub Pages site set up with a custom domain using Cloudflare DNS.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;configure-caching-settings&quot;&gt;Configure Caching Settings&lt;&#x2F;h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Access Caching Settings&lt;&#x2F;strong&gt;: Go to the Caching tab in the Cloudflare dashboard.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Custom Cache Rules&lt;&#x2F;strong&gt;: Set up custom cache rules to extend the cache duration.
+&lt;ul&gt;
+&lt;li&gt;Navigate to the “Caching” section and select “Configuration.”&lt;&#x2F;li&gt;
+&lt;li&gt;Under “Page Rules,” create a new rule.&lt;&#x2F;li&gt;
+&lt;li&gt;Enter your GitHub Pages domain (e.g., &lt;code&gt;yourdomain.com&#x2F;*&lt;&#x2F;code&gt;).&lt;&#x2F;li&gt;
+&lt;li&gt;Set the cache level to “Cache Everything.”&lt;&#x2F;li&gt;
+&lt;li&gt;Set the &lt;code&gt;Edge Cache TTL&lt;&#x2F;code&gt; (time to live) to your preferred duration. For static sites, you might set this to a month or longer.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h3 id=&quot;step-4-purge-cache-when-needed&quot;&gt;Step 4: Purge Cache When Needed&lt;&#x2F;h3&gt;
+&lt;p&gt;Whenever you make updates to your site, you’ll need to purge the Cloudflare cache to ensure visitors receive the latest content. This can be done manually from the Cloudflare dashboard under the “Caching” section by clicking “Purge Everything.”&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;By leveraging Cloudflare’s caching capabilities, you can significantly improve the performance of your GitHub Pages site. Extending the cache duration reduces server load and provides a faster, smoother experience for your visitors. Remember to purge the cache when you update your site to ensure that the latest content is always served.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
